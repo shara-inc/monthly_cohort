@@ -1,0 +1,14 @@
+monthly_cohort:
+  outputs:
+    dev:
+      dataset: dwh
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: /Users/divinee/Downloads/keyfiles/shara-dw-test-b7947c34b51f.json
+      location: europe-west2
+      method: service-account
+      priority: interactive
+      project: shara-dw-test
+      threads: 4
+      type: bigquery
+  target: dev

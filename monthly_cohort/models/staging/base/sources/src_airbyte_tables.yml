@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: airbyte_src
+    project: |
+      {%- if  target.name == "dev" -%} shara-dw-test
+      {%- elif target.name == "prod" -%} shara-dw-prod
+      {%- else -%}invalid_database
+      {%- endif -%}
+    dataset: public
+    tables:
+      - name: ab_bnpl_drawdowns
+        description: Holds details of drawdowns for Merchants providing a Shara facility to their customers.
+      - name: ab_bnpl_approvals
+        description: Holds details of approved loan facilities.
+      - name: ab_users
+        description: Contains all registered users in shara
+      - name: ab_bnpl_repayments
+        description: Holds repayment information associated with a shara facility
